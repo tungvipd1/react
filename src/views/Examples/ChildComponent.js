@@ -3,7 +3,12 @@ import React from "react";
 class ChildComponent extends React.Component {
     state = {
         firstName: '',
-        lastName: ''
+        lastName: '',
+        arrJob: [
+            { id: 'arrJob1', title: 'develope', salary: '500' },
+            { id: 'arrJob2', title: 'ba', salary: '1500' },
+            { id: 'arrJob3', title: 'pm', salary: '500' }
+        ]
 
     }
     handleChangeFirstName = (event) => {
@@ -21,10 +26,12 @@ class ChildComponent extends React.Component {
         alert('click')
     }
     render() {
-
+        // let name = this.props.name;
+        // let age = this.props.age;
+        let { name, age, address } = this.props;
         return (
             <>
-                <div>child component name: {this.props.name} - {this.props.age}</div>
+                <div>child component name: {name} - {age} - {address}</div>
             </>
         )
     }
